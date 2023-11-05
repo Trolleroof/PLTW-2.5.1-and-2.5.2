@@ -1,45 +1,54 @@
-/*
- * Activity 2.5.2
- */
 
 import java.util.Scanner;
 
-public class Player
-{
- private String name = ""; 
- private double points;
- 
- public Player(){
-    System.out.print("Enter Player name: ");
+public class Player {
+
+  /* your code here - attributes */
+
+  /* added with 2.5.2 */
+  private String name;
+  private int points;
+
+  /* your code here - constructor(s) */
+
+  /* added with 2.5.2 */
+  public Player() {
+    points = 600; // adjusted based on new game mechanics per group implement
+
+    System.out.println("Enter Player Name: ");
     Scanner sc = new Scanner(System.in);
-    String newName = sc.nextLine();
-    name = newName;
-    points = 0;
-    System.out.println("Welcome to the game, "+newName);
- }
+    name = sc.nextLine();
 
- public Player(String inputName){
-    this.name = inputName;
-    points = 0;
-    System.out.println("Welcome to the game, "+inputName);
+    String username = name;
+    System.out.println("\nHello " + username + "!!! \nWelcome to the game.\n");
 
- }
+    // add this later
+    System.out.println("""
+        How To Play:
+         
 
+                """);
+  }
 
- public String getName()
- {
-   return name;
- }
- 
- public void setName(String x)
- {
-   name = x;
- }
-  
- public double getPoints()
- {
-   return points;
- }
-  
-} 
+  /* added with 2.5.2 */
+  public Player(String inputName) {
+    points = 600; // adjusted based on new game mechanics per group implement
 
+    name = inputName;
+    System.out.println("Hello " + inputName + "; thanks for visiting our game.\n");
+  }
+
+  /* your code here - accessor(s) */
+
+  /* added with 2.5.4 */
+  public String getPlayerName() {
+    return name;
+  }
+
+  /* added with 2.5.5 */
+  public int getPoints() {
+    return points;
+  }
+
+  /* your code here - mutator(s) */
+}
